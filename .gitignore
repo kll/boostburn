@@ -1,0 +1,48 @@
+# environment variables
+.env
+
+# Python
+*.egg
+*.egg-info/
+*.py[cod]
+*.so
+*$py.class
+.Python
+.coverage
+.mypy_cache/
+.nox/
+.pytest_cache/
+.ruff_cache/
+.tox/
+__pycache__/
+build/
+coverage.xml
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+htmlcov/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Agents
+.claude/
