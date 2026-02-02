@@ -1,0 +1,117 @@
+- id: "gs-001"
+  description: "Totals across us-east-2 and us-west-2"
+  report_date: "2026-02-01"
+  expect:
+    total_tokens: 10383
+    by_region:
+      us-east-2:
+        total_tokens: 10233
+      us-west-2:
+        total_tokens: 150
+    min_cost_usd: 0.05
+    usage_present: true
+    slack_contains:
+      - "Total tokens"
+    slack_not_contains:
+      - "No Bedrock usage"
+
+- id: "gs-002"
+  description: "No usage outside report date"
+  report_date: "2026-02-02"
+  expect:
+    total_tokens: 0
+    no_usage: true
+    slack_contains:
+      - "No Bedrock usage"
+
+- id: "gs-003"
+  description: "East-only config totals"
+  config_path: "evals/fixtures/config_east.yaml"
+  report_date: "2026-02-01"
+  expect:
+    total_tokens: 10233
+    by_region:
+      us-east-2:
+        total_tokens: 10233
+    usage_present: true
+
+- id: "gs-004"
+  description: "West-only config totals"
+  config_path: "evals/fixtures/config_west.yaml"
+  report_date: "2026-02-01"
+  expect:
+    total_tokens: 150
+    by_region:
+      us-west-2:
+        total_tokens: 150
+    usage_present: true
+
+- id: "gs-005"
+  description: "Missing pricing triggers warning"
+  pricing_cache_path: "evals/fixtures/pricing_cache_missing.json"
+  report_date: "2026-02-01"
+  expect:
+    unpriced_models:
+      - "us.anthropic.claude-opus-4-5-20251101-v1"
+
+- id: "gs-006"
+  description: "Slack includes report header"
+  report_date: "2026-02-01"
+  expect:
+    slack_contains:
+      - "Bedrock usage report for 2026-02-01"
+
+- id: "gs-007"
+  description: "Slack includes region breakdown"
+  report_date: "2026-02-01"
+  expect:
+    slack_contains:
+      - "By region:"
+
+- id: "gs-008"
+  description: "Slack includes identity breakdown"
+  report_date: "2026-02-01"
+  expect:
+    slack_contains:
+      - "Top identities:"
+
+- id: "gs-009"
+  description: "No usage for prior date"
+  report_date: "2026-01-31"
+  expect:
+    total_tokens: 0
+    no_usage: true
+
+- id: "gs-010"
+  description: "Usage report does not say no usage when tokens exist"
+  report_date: "2026-02-01"
+  expect:
+    usage_present: true
+    slack_not_contains:
+      - "No Bedrock usage"
+
+- id: "gs-011"
+  description: "Slack includes model breakdown"
+  report_date: "2026-02-01"
+  expect:
+    slack_contains:
+      - "By model:"
+
+- id: "gs-012"
+  description: "Different inference profiles yield different costs"
+  report_date: "2026-02-01"
+  expect:
+    usage_present: true
+    # US inference profile at 0.005/0.015 per 1k tokens vs global at 0.006/0.018
+    # With same token counts, costs should differ based on inference profile
+
+- id: "gs-013"
+  description: "Production pricing completeness - no unpriced models"
+  report_date: "2026-02-01"
+  expect:
+    usage_present: true
+    min_cost_usd: 0.05
+    unpriced_models: []
+    slack_not_contains:
+      - "UNPRICED MODELS"
+      - "Missing pricing"

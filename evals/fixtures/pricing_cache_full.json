@@ -1,0 +1,32 @@
+{
+  "retrieved_at": "2026-02-01T00:00:00Z",
+  "service_code": "AmazonBedrock",
+  "rates": {
+    "global.anthropic.claude-haiku-4-5-20251001-v1:0": {
+      "us-east-2": {
+        "input_per_1k": 0.0025,
+        "output_per_1k": 0.0125,
+        "currency": "USD"
+      }
+    },
+    "us.anthropic.claude-haiku-4-5-20251001-v1:0": {
+      "us-east-2": {
+        "input_per_1k": 0.0025,
+        "output_per_1k": 0.0125,
+        "currency": "USD"
+      }
+    },
+    "us.anthropic.claude-opus-4-5-20251101-v1:0": {
+      "us-east-2": {
+        "input_per_1k": 0.015,
+        "output_per_1k": 0.075,
+        "currency": "USD"
+      },
+      "us-west-2": {
+        "input_per_1k": 0.015,
+        "output_per_1k": 0.075,
+        "currency": "USD"
+      }
+    }
+  }
+}

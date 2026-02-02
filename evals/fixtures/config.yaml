@@ -1,0 +1,5 @@
+account_id: "123456789012"
+log_prefix: ""
+regions:
+  us-east-2: bedrock-logs-123456789012-us-east-2
+  us-west-2: bedrock-logs-123456789012-us-west-2

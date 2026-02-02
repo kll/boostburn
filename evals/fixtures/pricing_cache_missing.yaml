@@ -1,0 +1,17 @@
+schema_version: 1
+generated_at: "2026-02-01T00:00:00Z"
+source: "evals-fixture"
+rates:
+  # Has US profile but missing global profile (to test warnings for missing profiles)
+  us.anthropic.claude-sonnet-4-5-20241022-v2:
+    default:
+      input_per_1k: 0.003
+      output_per_1k: 0.015
+      currency: USD
+
+  # Non-profile model entry
+  anthropic.claude-sonnet-4-5-20241022-v2:
+    default:
+      input_per_1k: 0.003
+      output_per_1k: 0.015
+      currency: USD

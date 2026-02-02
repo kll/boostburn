@@ -1,0 +1,58 @@
+generated_at: '2026-02-01T23:18:20.978517+00:00'
+source: https://aws.amazon.com/bedrock/pricing/
+rates:
+  anthropic.claude-haiku-4-5-20251001-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0011
+      output_per_1k: 0.0055
+  anthropic.claude-opus-4-5-20251101-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0055
+      output_per_1k: 0.0275
+  anthropic.claude-sonnet-4-5-20250929-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0033
+      output_per_1k: 0.0165
+  eu.anthropic.claude-opus-4-5-20251101-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0055
+      output_per_1k: 0.0275
+  global.anthropic.claude-haiku-4-5-20251001-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.001
+      output_per_1k: 0.005
+  global.anthropic.claude-opus-4-5-20251101-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.005
+      output_per_1k: 0.025
+  global.anthropic.claude-sonnet-4-5-20250929-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.003
+      output_per_1k: 0.015
+  us.anthropic.claude-3-5-haiku-20241022-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0008
+      output_per_1k: 0.004
+  us.anthropic.claude-haiku-4-5-20251001-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0011
+      output_per_1k: 0.0055
+  us.anthropic.claude-opus-4-5-20251101-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0055
+      output_per_1k: 0.0275
+  us.anthropic.claude-sonnet-4-5-20250929-v1:
+    default:
+      currency: USD
+      input_per_1k: 0.0033
+      output_per_1k: 0.0165
